@@ -80,6 +80,10 @@ Build outputs (`build/`, `dist/`) and local virtualenvs are not required in vers
 - Input file picker is **MP4 only** (`.mp4`). Other containers/codecs are not exposed in the UI.
 - Looping uses **concat + copy**; very short GOPs or odd files can rarely cause awkward cuts; for difficult sources, re-encode outside this tool.
 
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Jake Ronald Solis.
+
 ---
 
 Suggestions or ports (e.g. Linux/macOS by dropping `CREATE_NO_WINDOW` / `os.startfile`) are welcome via issues or PRs if you open-source the repo.
