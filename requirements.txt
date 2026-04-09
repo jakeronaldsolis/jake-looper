@@ -1,0 +1,4 @@
+# Runtime: Python 3.8+ with tkinter (stdlib). No pip packages required to run.
+#
+# Install for building the Windows .exe only:
+pyinstaller>=6.0,<7

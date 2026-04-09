@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+project1/
+
+# PyInstaller
+build/
+dist/
+*.spec.bak
+
+# Editor / OS
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+
+# Local backups
+*.bak
+
+# Root copies of FFmpeg (large); keep out of git
+ffmpeg.exe
+ffprobe.exe
+
+# Portable folder: ship jake_looper_gui.exe; users add their own ffmpeg.exe / ffprobe.exe beside it
+jakelooper/ffmpeg.exe
+jakelooper/ffprobe.exe
+
+# Local release artifact (published on GitHub Releases, not in git)
+jake-looper-*-windows-portable.zip
