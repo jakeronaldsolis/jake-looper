@@ -4,6 +4,8 @@ Desktop utility for **looping MP4 files** so the result is at least as long as a
 
 **Platform:** Windows (the app uses Windows-specific process and file-open behavior).
 
+This software uses **[FFmpeg](https://ffmpeg.org/)** (`ffmpeg` / `ffprobe`) as separate command-line tools. FFmpeg is **not** part of this repository’s authorship; it is licensed under the **GNU LGPL and/or GPL** (depending on the build). See [`third_party/ffmpeg/`](third_party/ffmpeg/) for license texts and [FFmpeg Legal](https://ffmpeg.org/legal.html). **Source code:** [ffmpeg.org/download.html](https://ffmpeg.org/download.html) (and [git.ffmpeg.org](https://git.ffmpeg.org/ffmpeg.git)).
+
 ## Features
 
 - Pick a **target runtime** with radio buttons: 1 hour through 10 hours (each option is that many seconds of minimum target length).
@@ -50,7 +52,15 @@ No Python packages are required at runtime beyond the standard library and tkint
 
 ## Portable Windows build (`jakelooper/`)
 
-**Download (recommended):** [GitHub Releases — latest portable zip](https://github.com/jakeronaldsolis/jake-looper/releases/latest) includes **`jake_looper_gui.exe`**, **`ffmpeg.exe`**, and **`ffprobe.exe`**. Extract all files to one folder and double-click `jake_looper_gui.exe`.
+**Download (recommended):** [GitHub Releases — latest portable zip](https://github.com/jakeronaldsolis/jake-looper/releases/latest) should include **`jake_looper_gui.exe`**, **`ffmpeg.exe`**, **`ffprobe.exe`**, and the **`third_party/ffmpeg`** folder (FFmpeg license texts). Extract everything to one folder and double-click `jake_looper_gui.exe`.
+
+To build that zip yourself from a clone (with `jakelooper/` containing the three executables):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/package-portable-zip.ps1 -Version 1.0.2
+```
+
+(Adjust `-Version` to match your release tag.)
 
 **From this repo:** `jakelooper/jake_looper_gui.exe` is checked in; **you do not need Python**. Add official Windows **`ffmpeg.exe`** and **`ffprobe.exe`** beside it (same folder as the app). Those FFmpeg binaries are **not** committed here (they are large); get them from [ffmpeg.org](https://ffmpeg.org/download.html) or another trusted source, or use the release zip above.
 
@@ -72,6 +82,8 @@ The spec builds a **windowed** (`console=False`) single-folder-style executable 
 | `jake_looper_gui.spec` | PyInstaller configuration |
 | `requirements.txt` | PyInstaller (optional; for building) |
 | `jakelooper/jake_looper_gui.exe` | Portable Windows build (add `ffmpeg.exe` / `ffprobe.exe` beside it) |
+| `third_party/ffmpeg/` | FFmpeg **LGPL/GPL** license texts + README (include when redistributing `ffmpeg.exe` / `ffprobe.exe`) |
+| `scripts/package-portable-zip.ps1` | Optional script to zip app + FFmpeg + `third_party` for releases |
 
 Build outputs (`build/`, `dist/`) and local virtualenvs are not required in version control; see `.gitignore`. Large FFmpeg binaries are ignored even under `jakelooper/`.
 
@@ -82,7 +94,9 @@ Build outputs (`build/`, `dist/`) and local virtualenvs are not required in vers
 
 ## License
 
-[MIT](LICENSE) — Copyright (c) 2026 Jake Ronald Solis.
+**Jake Looper** (this project’s own code) is under the [MIT License](LICENSE) — Copyright (c) 2026 Jake Ronald Solis.
+
+**FFmpeg** is third-party software; see [`third_party/ffmpeg/`](third_party/ffmpeg/) and the notice above. Do not imply FFmpeg is authored by this project or rename it to suggest otherwise.
 
 ---
 
