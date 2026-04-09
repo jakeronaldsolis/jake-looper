@@ -52,7 +52,7 @@ No Python packages are required at runtime beyond the standard library and tkint
 
 ## Portable Windows build (`jakelooper/`)
 
-**Download (recommended):** [GitHub Releases — latest portable zip](https://github.com/jakeronaldsolis/jake-looper/releases/latest) should include **`jake_looper_gui.exe`**, **`ffmpeg.exe`**, **`ffprobe.exe`**, and the **`third_party/ffmpeg`** folder (FFmpeg license texts). Extract everything to one folder and double-click `jake_looper_gui.exe`.
+**Download (recommended):** [GitHub Releases — latest portable zip](https://github.com/jakeronaldsolis/jake-looper/releases/latest) — use **v1.0.1 or newer** so the archive includes **`jake_looper_gui.exe`**, **`ffmpeg.exe`**, **`ffprobe.exe`**, and the **`third_party/ffmpeg`** folder (official FFmpeg LGPL/GPL license texts). Extract everything to one folder and double-click `jake_looper_gui.exe`. (Older assets, e.g. v1.0.0, may omit the license folder.)
 
 To build that zip yourself from a clone (with `jakelooper/` containing the three executables):
 
